@@ -27,24 +27,6 @@ def calculate_distance():
 @app.route('/suggest_routes', methods=['POST'])
 def suggest_routes():
     """Suggest routes based on start point and desired distance."""
-    # This will be implemented later to generate route suggestions
-    start_point = request.json.get('start_point', {})
-    desired_distance = request.json.get('distance', 0)
-    
-    # Placeholder for route suggestion
-    # We'll add actual route generation logic later
-    suggested_routes = []
-    
-    return jsonify({
-        'routes': suggested_routes
-    })
-
-if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=8080)
-
-@app.route('/suggest_routes', methods=['POST'])
-def suggest_routes():
-    """Suggest routes based on start point and desired distance."""
     data = request.json
     start_point = data.get('start_point', {})
     desired_distance = float(data.get('distance', 5))  # Default to 5km
