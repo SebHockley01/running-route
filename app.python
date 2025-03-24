@@ -1,0 +1,41 @@
+from flask import Flask, render_template, request, jsonify
+
+app = Flask(__name__)
+
+@app.route('/')
+def index():
+    """Render the main page with the map."""
+    return render_template('index.html')
+
+@app.route('/calculate_distance', methods=['POST'])
+def calculate_distance():
+    """Calculate the distance of a route."""
+    # This will be implemented later to calculate route distances
+    route_points = request.json.get('points', [])
+    
+    # Placeholder for distance calculation
+    # We'll add actual calculation logic later
+    distance = 0
+    
+    return jsonify({
+        'distance': distance,
+        'unit': 'kilometers'
+    })
+
+@app.route('/suggest_routes', methods=['POST'])
+def suggest_routes():
+    """Suggest routes based on start point and desired distance."""
+    # This will be implemented later to generate route suggestions
+    start_point = request.json.get('start_point', {})
+    desired_distance = request.json.get('distance', 0)
+    
+    # Placeholder for route suggestion
+    # We'll add actual route generation logic later
+    suggested_routes = []
+    
+    return jsonify({
+        'routes': suggested_routes
+    })
+
+if __name__ == '__main__':
+    app.run(debug=True)
