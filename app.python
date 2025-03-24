@@ -87,3 +87,6 @@ def generate_routes(start_lat, start_lng, target_distance):
         })
     
     return routes
+
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8080, debug=True)  # Added debug=True for more detailed error messages
